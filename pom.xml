@@ -7,6 +7,14 @@
   <version>1.0.0</version>
   <packaging>maven-archetype</packaging>
 
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/vlad-sidius/java-simple-archetype</url>
+    </repository>
+  </distributionManagement>
+
   <build>
     <extensions>
       <extension>
