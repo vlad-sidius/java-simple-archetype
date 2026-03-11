@@ -5,6 +5,13 @@
     name="quickstart">
 
   <fileSets>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>gitignore_template</include>
+      </includes>
+    </fileSet>
+
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/main/java</directory>
     </fileSet>
@@ -19,12 +26,10 @@
   </fileSets>
 
   <requiredProperties>
+    <requiredProperty key="mainClass" />
+
     <requiredProperty key="packageName">
       <defaultValue>com.example</defaultValue>
-    </requiredProperty>
-
-    <requiredProperty key="mainClass">
-      <defaultValue>App</defaultValue>
     </requiredProperty>
 
     <requiredProperty key="javaVersion">

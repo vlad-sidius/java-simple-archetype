@@ -13,7 +13,7 @@ This archetype creates a ready-to-use Java project structure with:
 ## Prerequisites
 
 - Maven 3.6+
-- JDK 25 or higher (or your preferred Java version)
+- JDK 25 or higher (or your preferred Java version, configurable via `javaVersion`)
 
 ## Usage
 
@@ -52,6 +52,7 @@ mvn archetype:generate -B \
   -DartifactId=my-app \
   -Dversion=1.0-SNAPSHOT \
   -DpackageName=com.example \
+  -DmainClass=App \
   -DjavaVersion=25
 ```
 
@@ -60,6 +61,7 @@ mvn archetype:generate -B \
 | Property      | Description              | Default Value   |
 |---------------|--------------------------|-----------------|
 | `packageName` | Base package for sources | `com.example`   |
+| `mainClass`   | Main class name          | `App`           |
 | `javaVersion` | Java version to use      | `25`            |
 
 ## Generated Project Structure
@@ -79,18 +81,20 @@ my-app/
 │               └── AppTest.java
 ```
 
+Note: The actual class names depend on the `mainClass` property (default: `App`).
+
 ## Generated Project Features
 
 The generated project includes:
 
-- **App.java**: Simple main class with "Hello World!" output
-- **AppTest.java**: Basic JUnit 6 test example
+- **App.java**: Simple main class with "Hello from ${package}!" output
+- **AppTest.java**: Basic JUnit 6 test example (test class name matches `mainClass` + `Test`)
 - **pom.xml**: Pre-configured with:
-  - JUnit (Jupiter) dependency
-  - AssertJ dependency
-  - Maven Compiler Plugin
-  - Maven Surefire Plugin (unit tests)
-  - Maven Failsafe Plugin (integration tests)
+  - JUnit Jupiter 6.0.3 dependency
+  - AssertJ 3.27.7 dependency
+  - Maven Compiler Plugin 3.15.0
+  - Maven Surefire Plugin 3.5.5 (unit tests)
+  - Maven Failsafe Plugin 3.5.5 (integration tests)
 
 ## Building the Generated Project
 
@@ -111,6 +115,8 @@ mvn package
 # Run the application
 mvn exec:java -Dexec.mainClass="com.example.App"
 ```
+
+Note: Adjust the main class name based on your `mainClass` property value.
 
 ## Local Installation
 
