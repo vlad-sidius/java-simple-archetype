@@ -25,7 +25,7 @@ Run the following command to create a new project from this archetype:
 mvn archetype:generate \
   -DarchetypeGroupId=org.udavpit.archetypes \
   -DarchetypeArtifactId=java-simple-archetype \
-  -DarchetypeVersion=1.0.0
+  -DarchetypeVersion={version}
 ```
 
 ### Interactive Mode
@@ -36,7 +36,7 @@ For interactive prompts (project coordinates and properties):
 mvn archetype:generate \
   -DarchetypeGroupId=org.udavpit.archetypes \
   -DarchetypeArtifactId=java-simple-archetype \
-  -DarchetypeVersion=1.0.0
+  -DarchetypeVersion={version}
 ```
 
 ### Batch Mode (Non-Interactive)
@@ -47,7 +47,7 @@ Specify all parameters in a single command:
 mvn archetype:generate -B \
   -DarchetypeGroupId=org.udavpit.archetypes \
   -DarchetypeArtifactId=java-simple-archetype \
-  -DarchetypeVersion=1.0.0 \
+  -DarchetypeVersion={version} \
   -DgroupId=com.example \
   -DartifactId=my-app \
   -Dversion=1.0-SNAPSHOT \
@@ -86,7 +86,8 @@ The generated project includes:
 - **App.java**: Simple main class with "Hello World!" output
 - **AppTest.java**: Basic JUnit 6 test example
 - **pom.xml**: Pre-configured with:
-  - JUnit 6 (Jupiter) dependency
+  - JUnit (Jupiter) dependency
+  - AssertJ dependency
   - Maven Compiler Plugin
   - Maven Surefire Plugin (unit tests)
   - Maven Failsafe Plugin (integration tests)
@@ -118,13 +119,6 @@ To use this archetype locally, install it to your local Maven repository:
 ```bash
 mvn clean install
 ```
-
-## Project Information
-
-- **Group ID**: `org.udavpit.archetypes`
-- **Artifact ID**: `java-simple-archetype`
-- **Version**: `1.0.0`
-- **Packaging**: `maven-archetype`
 
 ## License
 
